@@ -1,0 +1,139 @@
+<!-- Syifa Tasya Melita -->
+<!-- 209240307 -->
+<!-- ABI 20/2022 -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamis Cantik</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search...">
+        <span class="search-icon"><i class="fas fa-search"></i></span>
+      </div>
+      
+      <h1 class="header-title">Gamis Cantik</h1>
+      
+      <div class="header-icons">
+        <div class="profile-dropdown">
+          <div id="profile-icon" class="profile-icon">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <div id="dropdown-menu" class="dropdown-menu hidden">
+            <a href="#logout" class="dropdown-item">Logout</a>
+          </div>
+        </div>
+        
+        
+        <div class="icon-wrapper">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="badge" id="cart-badge">2</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="about-section">
+    <div class="about-text-overlay">
+      <div class="menu-bar">
+        <a href="#about">About</a>
+        <a href="#produk-section">Product</a>
+        <a href="#categories-section">Categories</a>
+        <a href="#footer-section">Contact</a>
+      </div>
+      <h2>About Us</h2>
+      <p>
+        Welcome to My E-Commerce! We offer the best products at the best prices. Our mission is to deliver quality items with excellent customer service.
+      </p>
+      <a href="#produk-section" class="cta-button">Let's Shop</a>
+    </div>
+  </section>
+
+  <section id="categories-section" class="categories-section">
+    <h2>Our Categories</h2>
+    <div class="categories-container">
+      <div class="category-item">
+        <div class="category-label-overlay">Dress</div>
+        <img src="images/edo-rezkia-HVeNWhzx_xM-unsplash.jpg" alt="Dress">
+      </div>
+      <div class="category-item">
+        <div class="category-label-overlay">Hijab</div>
+        <img src="images/pexels-steven-tanuwijaya-1756726-3328126.jpg" alt="Hijab">
+      </div>
+      <div class="category-item">
+        <div class="category-label-overlay">Accessories</div>
+        <img src="images/kate-tepl-FKXMWU2HQ2Y-unsplash.jpg" alt="Accessories">
+      </div>
+      <div class="category-item">
+        <div class="category-label-overlay">Clothes</div>
+        <img src="images/beyza-yilmaz-8A5T6welTPQ-unsplash.jpg" alt="Clothes">
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="produk-section" class="produk-section">
+      <h2>Product</h2>
+      <div id="produk-container" class="produk-container">
+        <!-- Produk akan dirender di sini dengan JavaScript -->
+      </div>
+      <div id="no-results" class="no-results" style="display: none;">
+        <p>Data Not Found</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="https://wa.me/6281234567890">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Social Media</h4>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Gamis Cantik. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Login Form -->
+<div id="login-page" class="login-page hidden">
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="handleLogin()">Login</button>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

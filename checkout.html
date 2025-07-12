@@ -1,0 +1,154 @@
+<!-- Syifa Tasya Melita -->
+<!-- 209240307 -->
+<!-- ABI 20/2022 -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f3f3;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .checkout-container {
+      background: #fff;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #764ba2;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .payment-option {
+      display: flex;
+      align-items: center;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .payment-option:hover {
+      border-color: #764ba2;
+      background-color: #f9f4ff;
+    }
+
+    .payment-option input[type="radio"] {
+      margin-right: 1rem;
+      accent-color: #764ba2;
+    }
+
+    .confirm-payment-btn {
+      width: 100%;
+      padding: 1rem;
+      background-color: #764ba2;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .confirm-payment-btn:hover {
+      background-color: #5d3a91;
+    }
+
+    .payment-details {
+      background-color: #f9f9f9;
+      border-left: 4px solid #764ba2;
+      padding: 1rem;
+      margin-top: -0.5rem;
+      margin-bottom: 1rem;
+      display: none;
+      font-size: 0.95rem;
+      color: #333;
+      border-radius: 0 0 10px 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout-container">
+    <h1>Payment Method</h1>
+    <form id="payment-form">
+      <label class="payment-option" for="bank-transfer">
+        <input type="radio" id="bank-transfer" name="payment" value="bank-transfer" required>
+        Transfer Bank (BCA, Mandiri, BRI)
+      </label>
+      <div class="payment-details" id="details-bank">
+        <strong>BCA 00012222222 a.n. Gamis Cantik</strong>
+      </div>
+
+      <label class="payment-option" for="ewallet">
+        <input type="radio" id="ewallet" name="payment" value="ewallet">
+        E-Wallet (OVO, Dana, GoPay)
+      </label>
+      <div class="payment-details" id="details-ewallet">
+        <strong>OVO / GoPay / Dana: 0838477493123</strong><br>
+        a.n. Syifa Tasya Melita
+      </div>
+
+      <label class="payment-option" for="cod">
+        <input type="radio" id="cod" name="payment" value="cod">
+        Cash on Delivery (COD)
+      </label>
+      <div class="payment-details" id="details-cod">
+        Payment is made when the goods are received,<br>
+        Please prepare cash accordingly.
+      </div>
+
+      <button type="submit" class="confirm-payment-btn">Confirm</button>
+    </form>
+  </div>
+
+  <script>
+    const radios = document.querySelectorAll('input[name="payment"]');
+    const details = {
+      "bank-transfer": document.getElementById("details-bank"),
+      "ewallet": document.getElementById("details-ewallet"),
+      "cod": document.getElementById("details-cod")
+    };
+
+    radios.forEach(radio => {
+      radio.addEventListener("change", () => {
+        Object.values(details).forEach(div => div.style.display = "none");
+        const selected = radio.value;
+        if (details[selected]) {
+          details[selected].style.display = "block";
+        }
+      });
+    });
+
+    document.getElementById("payment-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const selected = document.querySelector('input[name="payment"]:checked');
+      if (selected) {
+        alert(`Metode dipilih: ${selected.value}`);
+      }
+    });
+  </script>
+</body>
+</html>
